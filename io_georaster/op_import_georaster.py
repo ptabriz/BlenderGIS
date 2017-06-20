@@ -547,10 +547,10 @@ class IMPORT_GEORAST(Operator, ImportHelper):
 		#...if so, maybee we need to adjust 3d view settings to it
 		if newObjCreated:
 			bb = BBOX.fromObj(obj)
-			adjust3Dview(context, bb)
+			#adjust3Dview(context, bb)
 
 		#Force view mode with textures
-		showTextures(context)
+		#showTextures(context)
 
 
 		return {'FINISHED'}
