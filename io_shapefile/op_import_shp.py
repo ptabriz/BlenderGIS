@@ -574,13 +574,6 @@ class IMPORT_SHP(Operator):
 				# so we must avoid using operators when created many objects with the 'separate objects' option)
 				##bpy.ops.object.origin_set(type='ORIGIN_GEOMETRY')
 
-				#write attributes data
-				for i, field in enumerate(shp.fields):
-					fieldName = field[0]
-					if fieldName != 'DeletionFlag':
-						obj[fieldName] = record[i-1]
-
-
 			elif self.fieldExtrudeName:
 				#Join to final bmesh (use from_mesh method hack)
 				buff = bpy.data.meshes.new(".temp")
@@ -618,7 +611,7 @@ class IMPORT_SHP(Operator):
 
 		#Adjust grid size
 		bbox.shift(-dx, -dy) #convert shapefile bbox in 3d view space
-		adjust3Dview(context, bbox)
+		#adjust3Dview(context, bbox)
 
 
 		return {'FINISHED'}
